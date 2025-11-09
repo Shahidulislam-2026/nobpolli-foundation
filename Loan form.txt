@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ঋণ আবেদন ফরম</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            margin-top: 25px;
+            padding: 12px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>ঋণ আবেদন ফরম</h2>
+    <form id="loanForm">
+        <!-- Applicant Info -->
+        <label>নাম *</label>
+        <input type="text" name="name" required>
+
+        <label>পিতা/স্বামীর নাম *</label>
+        <input type="text" name="father_name" required>
+
+        <label>মাতার নাম</label>
+        <input type="text" name="mother_name">
+
+        <label>জন্মতারিখ *</label>
+        <input type="date" name="dob" required>
+
+        <label>জাতীয় পরিচয়পত্র নম্বর *</label>
+        <input type="text" name="nid" required>
+
+        <label>স্থায়ী ঠিকানা *</label>
+        <textarea name="permanent_address" rows="3" required></textarea>
+
+        <label>বর্তমান ঠিকানা</label>
+        <textarea name="current_address" rows="3"></textarea>
+
+        <label>মোবাইল নম্বর *</label>
+        <input type="text" name="mobile" required>
+
+        <label>পেশা/ব্যবসা *</label>
+        <input type="text" name="occupation" required>
+
+        <label>মাসিক আয়</label>
+        <input type="number" name="income">
+
+        <!-- Loan Details -->
+        <label>চাহিত ঋণের পরিমাণ *</label>
+        <input type="number" name="loan_amount" required>
+
+        <label>ঋণের উদ্দেশ্য *</label>
+        <textarea name="loan_purpose" rows="3" required></textarea>
+
+        <label>পরিশোধের সময়কাল</label>
+        <input type="text" name="repayment_period">
+
+        <label>জামিনদারের নাম</label>
+        <input type="text" name="guarantor_name">
+
+        <label>জামিনদারের ফোন নম্বর</label>
+        <input type="text" name="guarantor_phone">
+
+        <label>জামিনদারের ঠিকানা</label>
+        <textarea name="guarantor_address" rows="3"></textarea>
+
+        <!-- Declaration -->
+        <label>
+            <input type="checkbox" name="declaration" required>
+            আমি এখানে প্রদত্ত তথ্য সত্য ও সঠিক উল্লেখ করছি। *
+        </label>
+
+        <label>তারিখ *</label>
+        <input type="date" name="date" required>
+
+        <button type="submit">ফর্ম জমা দিন</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('loanForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('আপনার আবেদন সফলভাবে জমা হয়েছে।');
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
